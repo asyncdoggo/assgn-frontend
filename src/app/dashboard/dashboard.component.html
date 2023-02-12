@@ -1,1 +1,31 @@
-<p>dashboard works!</p>
+<div class="container">
+    <div class="sidenav">
+        <span class="icon_dashboard">icon</span>
+        <span class="icon_list">icon</span>
+    </div>
+
+
+    <div class="main">
+
+        <div class="topnav">
+            <p>Dashboard</p>
+        </div>
+
+        <div class="data">
+            <div class="counters">
+                <div *ngFor="let item of counters" class="card1">
+                    <p>{{item._id}}</p>
+                    <p>{{item.count}}</p>
+                </div>
+            </div>
+            <div class="chart">
+                <p class="t1">project plan vs actual</p>
+                <p class="t2">Registration</p>
+
+                <div class="graph">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

@@ -9,7 +9,8 @@ import { LoginService } from './services/login.service';
   styleUrls: ['./login.component.scss']
 })
 export class LoginComponent {
-
+    visibility = "visibility_off"
+    visible = false
     error_message = ""
 // email: ayushdeshpande81@gmail.com pw: ayush
     constructor(private service: LoginService, private router: Router) { }
@@ -31,9 +32,18 @@ export class LoginComponent {
         .subscribe(value => {
             if(value.message == "success"){
                 sessionStorage.setItem("token",value.token as string);
-                console.log(value.token)
-                this.router.navigate([""])
+                this.router.navigate(["/dashboard"])
             }
         })
+    }
+
+    toggleVisibility(){
+        if(this.visible){
+            this.visibility = "visibility_off"
+        }
+        else{
+            this.visibility = "visibility"
+        }
+        this.visible = !this.visible
     }
 }
