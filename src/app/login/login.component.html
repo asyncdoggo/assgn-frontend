@@ -1,0 +1,24 @@
+<div class="main">
+    <div class="login-card">
+        <p>Login to get started</p>
+        <div class="email-box">
+            <input #email type="email" placeholder="email" />
+        </div>
+        <div class="password-box">
+            <input #password type="password" />
+            <span class="someicon">C</span>
+        </div>
+        <div class="btn">
+            <button (click)="loginUser(email.value,password.value)">Login</button>
+        </div>
+
+
+
+
+        <div class="error">
+            <p>
+                {{error_message}}
+            </p>
+        </div>
+    </div>
+</div>
