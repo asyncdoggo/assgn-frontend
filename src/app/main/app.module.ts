@@ -6,18 +6,22 @@ import { AppComponent } from './app.component';
 import { LoginComponent } from '../login/login.component';
 import { DashboardComponent } from '../dashboard/dashboard.component';
 import { ProjectListComponent } from '../project-list/project-list.component';
+import { HighchartsChartModule } from 'highcharts-angular';
+import { InsertProjectComponent } from '../insert-project/insert-project.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     LoginComponent,
     DashboardComponent,
-    ProjectListComponent
+    ProjectListComponent,
+    InsertProjectComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    HighchartsChartModule
   ],
   providers: [
   ],

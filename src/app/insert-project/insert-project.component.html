@@ -1,0 +1,61 @@
+<div class="container">
+    <div class="sidenav">
+        <span class="icon_dashboard" (click)="navigate('/insert')">insert</span>
+        <a href="#"> <span class="icon_list">icon</span> </a>
+    </div>
+
+
+    <div class="main">
+
+        <div class="topnav">
+            <p>Create Project</p>
+        </div>
+    <form id="insertForm">
+        <div class="data">
+            <textarea placeholder="Enter project name"></textarea>
+        </div>
+        <label for="reason">Reason</label>
+        <select name="reason" id="reason">
+            <option value="bis">For business</option>
+        </select>
+
+        <label for="type">Type</label>
+        <select name="type" id="type">
+            <option value="internal">Internal</option>
+        </select>
+
+        <label for="div">Division</label>
+        <select name="div" id="div">
+            <option value="filters">Filters</option>
+        </select>
+
+        <label for="category">Category</label>
+        <select name="category" id="category">
+            <option value="A">Category A</option>
+        </select>
+
+        <label for="priority">Priority</label>
+        <select name="priority" id="priority">
+            <option value="high">High</option>
+        </select>
+
+        <label for="department">Department</label>
+        <select name="department" id="department">
+            <option value="strategy">Strategy</option>
+        </select>
+
+        <label for="start_date">Start Date as per business plan</label>
+        <input type="date" name="start_date" id="start_date">
+
+        <label for="end_date">End Date as per business plan</label>
+        <input type="date" name="end_date" id="end_date">
+
+        <label for="location">Location</label>
+        <select name="location" id="location">
+            <option value="Pune">Pune</option>
+        </select>
+        <button type="submit">Save Project</button>
+    </form>
+
+    </div>
+</div>
