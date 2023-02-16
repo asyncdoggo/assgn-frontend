@@ -8,6 +8,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { ProjectListComponent } from '../project-list/project-list.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { InsertProjectComponent } from '../insert-project/insert-project.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { InsertProjectComponent } from '../insert-project/insert-project.compone
     LoginComponent,
     DashboardComponent,
     ProjectListComponent,
-    InsertProjectComponent
+    InsertProjectComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
-    HighchartsChartModule
+    HighchartsChartModule,
+    FormsModule
   ],
   providers: [
   ],

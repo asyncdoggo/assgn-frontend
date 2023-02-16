@@ -1,6 +1,7 @@
 export interface IProjects{
     message:String,
     projects:[{
+        _id:String
         name: String,
         reason:String,
         type: String,
@@ -12,5 +13,6 @@ export interface IProjects{
         end_date: Date,
         location: String,
         status: String,
-    }]
+    }],
+    pages:String
 }

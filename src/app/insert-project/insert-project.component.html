@@ -1,7 +1,7 @@
 <div class="container">
     <div class="sidenav">
         <span class="icon_dashboard" (click)="navigate('/insert')">insert</span>
-        <a href="#"> <span class="icon_list">icon</span> </a>
+        <span class="icon_list" (click)="navigate('/projects')">icon</span>
     </div>
 
 
@@ -10,52 +10,80 @@
         <div class="topnav">
             <p>Create Project</p>
         </div>
-    <form id="insertForm">
-        <div class="data">
-            <textarea placeholder="Enter project name"></textarea>
-        </div>
-        <label for="reason">Reason</label>
-        <select name="reason" id="reason">
-            <option value="bis">For business</option>
-        </select>
+        <form #insertForm="ngForm" (ngSubmit)="insertProject()">
+            <div class="data">
+                <textarea placeholder="Enter project name" name="name" [(ngModel)]="project.name" required></textarea>
+            </div>
 
-        <label for="type">Type</label>
-        <select name="type" id="type">
-            <option value="internal">Internal</option>
-        </select>
+            <div class="row row1">
+                <div class="item">
+                    <label for="reason">Reason</label>
+                    <select name="reason" id="reason" [(ngModel)]="project.reason" required>
+                        <option value="Business">For business</option>
+                    </select>
+                </div>
 
-        <label for="div">Division</label>
-        <select name="div" id="div">
-            <option value="filters">Filters</option>
-        </select>
+                <div class="item">
 
-        <label for="category">Category</label>
-        <select name="category" id="category">
-            <option value="A">Category A</option>
-        </select>
+                    <label for="type">Type</label>
+                    <select name="type" id="type" [(ngModel)]="project.type" required>
+                        <option value="Internal">Internal</option>
+                    </select>
+                </div>
+                <div class="item">
 
-        <label for="priority">Priority</label>
-        <select name="priority" id="priority">
-            <option value="high">High</option>
-        </select>
+                    <label for="div">Division</label>
+                    <select name="div" id="div" [(ngModel)]="project.division" required>
+                        <option value="filters">Filters</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row row2">
+                <div class="item">
 
-        <label for="department">Department</label>
-        <select name="department" id="department">
-            <option value="strategy">Strategy</option>
-        </select>
+                    <label for="category">Category</label>
+                    <select name="category" id="category" [(ngModel)]="project.category" required>
+                        <option value="A">Category A</option>
+                    </select>
+                </div>
+                <div class="item">
 
-        <label for="start_date">Start Date as per business plan</label>
-        <input type="date" name="start_date" id="start_date">
+                    <label for="priority">Priority</label>
+                    <select name="priority" id="priority" [(ngModel)]="project.priority" required>
+                        <option value="0">High</option>
+                    </select>
+                </div>
+                <div class="item">
 
-        <label for="end_date">End Date as per business plan</label>
-        <input type="date" name="end_date" id="end_date">
+                    <label for="department">Department</label>
+                    <select name="department" id="department" [(ngModel)]="project.department" required>
+                        <option value="strategy">Strategy</option>
+                    </select>
+                </div>
+            </div>
+            <div class="row row3">
 
-        <label for="location">Location</label>
-        <select name="location" id="location">
-            <option value="Pune">Pune</option>
-        </select>
-        <button type="submit">Save Project</button>
-    </form>
+                <div class="item">
+
+                    <label for="start_date">Start Date as per business plan</label>
+                    <input type="date" name="start_date" id="start_date" [(ngModel)]="project.start_date" required>
+                </div>
+                <div class="item">
+
+                    <label for="end_date">End Date as per business plan</label>
+                    <input type="date" name="end_date" id="end_date" [(ngModel)]="project.end_date" required>
+                </div>
+                <div class="item">
+
+                    <label for="location">Location</label>
+                    <select name="location" id="location" [(ngModel)]="project.location" required>
+                        <option value="Pune">Pune</option>
+                    </select>
+                </div>
+            </div>
+
+            <button type="submit" [disabled]="!insertForm.valid">Save Project</button>
+        </form>
 
     </div>
 </div>

@@ -13,7 +13,9 @@ let token = sessionStorage.getItem("token")
 const routes: Routes = [
     {path: "", component: LoginComponent,canActivate: [LoginGaurd]},
     {path: "dashboard", component:DashboardComponent, canActivate:[LogoutGaurd]},
-    {path: "insert", component: InsertProjectComponent, canActivate:[LogoutGaurd]}
+    {path: "insert", component: InsertProjectComponent, canActivate:[LogoutGaurd]},
+    {path: "projects", component: ProjectListComponent, canActivate:[LogoutGaurd]}
+
 ];
 
 @NgModule({

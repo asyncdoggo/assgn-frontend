@@ -16,8 +16,10 @@ export class InsertService {
 
     constructor(private http: HttpClient) {}
 
-    insertProject(): Observable<IResponse> {
-        return this.http.post<IResponse>(this.url,{
+    insertProject(project:any): Observable<IResponse> {
+        return this.http.post<IResponse>(this.url,
+           project,
+           {
             headers:{
                 token:this.token? this.token : ""
             }

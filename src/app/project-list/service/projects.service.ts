@@ -13,9 +13,9 @@ export class ProjectsService {
     private token = sessionStorage.getItem("token")
     constructor(private http: HttpClient) {}
 
-    getProjects(): Observable<IProjects> {
+    getProjects(page:any,size:any): Observable<IProjects> {
         return this.http.get<IProjects>(
-            this.url2,
+            this.url2+`?page=${page}&size=${size}`,
             {
                 headers:{
                     token: this.token? this.token : ""

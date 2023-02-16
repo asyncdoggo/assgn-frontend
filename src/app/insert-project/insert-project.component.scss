@@ -1,9 +1,9 @@
-.container{
+.container {
     display: flex;
     flex-direction: row;
     width: 100%;
 
-    .sidenav{
+    .sidenav {
         padding-top: 100px;
         width: 8vw;
         border: solid 0.3px black;
@@ -11,18 +11,18 @@
         flex-direction: column;
         align-items: center;
 
-        span{
+        span {
             padding: 10px;
         }
-
     }
 
-    .main{
+    .main {
         width: 100%;
         display: flex;
         flex-direction: column;
+        padding-left: 10px;
 
-        .topnav{
+        .topnav {
             border: solid 1px black;
             margin-left: 10px;
             padding-left: 40px;
@@ -30,23 +30,38 @@
             margin-bottom: 20px;
         }
 
-        .data{
-            width: 100%;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            border: solid 1px black;
-            margin-left: 10px;
-            padding-top: 10px;
+        textarea {
+            resize: none;
+            width: 300px;
+            height: 50px;
+        }
 
-            textarea{
-                resize: none;
-                width: 300px;
-                height: 50px;
+        form {
+            width: 100%;
+
+            .item {
+                display: flex;
+                flex-direction: column;
             }
-            
+
+            select {
+                width: 200px;
+            }
+            input[type="date"] {
+                width: 200px;
+            }
+
+            .row {
+                width: 100%;
+                display: flex;
+                flex-direction: row;
+                justify-content: space-between;
+                align-items: center;
+
+                @media screen and (max-width: 700px) {
+                    flex-direction: column;
+                }
+            }
         }
     }
-
-
 }
