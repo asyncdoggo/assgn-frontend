@@ -34,6 +34,11 @@ export class InsertProjectComponent {
     })
   }
 
+  logout(){
+    sessionStorage.clear()
+    this.navigate("/")
+  }
+
   navigate(path:string){
     this.router.navigate([path])
   }

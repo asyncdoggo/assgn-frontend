@@ -1,34 +1,4 @@
-.container{
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-
-    .sidenav{
-        padding-top: 100px;
-        width: 8vw;
-        border: solid 0.3px black;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        span{
-            padding: 10px;
-        }
-
-    }
-
-    .main{
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-
-        .topnav{
-            border: solid 1px black;
-            margin-left: 10px;
-            padding-left: 40px;
-            font-size: x-large;
-            margin-bottom: 20px;
-        }
+@use '../main/_main';
 
         .data{
             width: 100%;
@@ -73,10 +43,7 @@
                 }
             }
         }
-    }
-
-
-}
+    
 
 
 a{

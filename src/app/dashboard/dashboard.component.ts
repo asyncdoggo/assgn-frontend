@@ -34,6 +34,10 @@ export class DashboardComponent {
     navigate(path:string){
         this.router.navigate([path])
     }
+    logout(){
+        sessionStorage.clear()
+        this.navigate("/")
+      }
 
     counters: any;
     deps: string[] = [];

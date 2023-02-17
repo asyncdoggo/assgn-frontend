@@ -1,34 +1,4 @@
-.container {
-    display: flex;
-    flex-direction: row;
-    width: 100%;
-
-    .sidenav {
-        padding-top: 100px;
-        width: 8vw;
-        border: solid 0.3px black;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-
-        span {
-            padding: 10px;
-        }
-    }
-
-    .main {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        padding-left: 10px;
-
-        .topnav {
-            border: solid 1px black;
-            margin-left: 10px;
-            padding-left: 40px;
-            font-size: x-large;
-            margin-bottom: 20px;
-        }
+@use '../main/_main';
 
         textarea {
             resize: none;
@@ -37,7 +7,10 @@
         }
 
         form {
+            display: flex;
+            flex-direction: column;
             width: 100%;
+            margin-left: 40px;
 
             .item {
                 display: flex;
@@ -45,23 +18,57 @@
             }
 
             select {
-                width: 200px;
+                width: 235px;
+                height: 40px;
             }
             input[type="date"] {
-                width: 200px;
+                width: 230px;
+                height: 40px;
             }
 
             .row {
                 width: 100%;
                 display: flex;
                 flex-direction: row;
-                justify-content: space-between;
+                align-self: flex-start;
                 align-items: center;
 
-                @media screen and (max-width: 700px) {
+
+               
+                .item{
+                    margin-top: 20px;
+                    margin-right: 100px;
+                }
+
+                @media screen and (max-width: 1020px) {
                     flex-direction: column;
+
+                    button{
+                        margin-right: 100px;
+                    }
                 }
             }
+
+            .row4{
+                font-size: 18px;
+                font-weight: bold;
+            }
+
+            button{
+                margin-top: 20px;
+                
+                border-radius: 25rem;
+                border: none;
+                color: white;
+                font-size: 16px;
+                background-color: blue;
+                height: 40px;
+                width: 200px;
+                justify-self: center;
+                &:disabled{
+                    background-color: rgba(0, 0, 255, 0.55);
+                }
+            }
+
+           
         }
-    }
-}

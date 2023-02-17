@@ -1,7 +1,10 @@
 <div class="container">
     <div class="sidenav">
-        <span class="icon_dashboard" (click)="navigate('/insert')">insert</span>
-        <span class="icon_list" (click)="navigate('/projects')">icon</span>
+        <span class="material-symbols-outlined" (click)="navigate('/insert')">add</span>
+        <span class="material-symbols-outlined" (click)="navigate('/projects')">assignment</span>
+        <span class="material-symbols-outlined" (click)="navigate('/dashboard')">space_dashboard</span>
+        <span class="material-symbols-outlined" (click)="logout()">logout</span>
+
     </div>
 
 
@@ -18,8 +21,12 @@
             <div class="row row1">
                 <div class="item">
                     <label for="reason">Reason</label>
-                    <select name="reason" id="reason" [(ngModel)]="project.reason" required>
-                        <option value="Business">For business</option>
+                    <select name="reason" id="reason" [(ngModel)]="project.reason">
+                        <option value="Business">Business</option>
+                        <option value="Dealership">Dealership</option>
+                        <option value="Transport">Transport</option>
+
+
                     </select>
                 </div>
 
@@ -28,13 +35,20 @@
                     <label for="type">Type</label>
                     <select name="type" id="type" [(ngModel)]="project.type" required>
                         <option value="Internal">Internal</option>
+                        <option value="External">External</option>
+                        <option value="Vendor">Vendor</option>
                     </select>
                 </div>
                 <div class="item">
 
                     <label for="div">Division</label>
                     <select name="div" id="div" [(ngModel)]="project.division" required>
-                        <option value="filters">Filters</option>
+                        <option value="Compressor">Compressor</option>
+                        <option value="Filters">Filters</option>
+                        <option value="Pumps">Pilters</option>
+                        <option value="Glass">Glass</option>
+                        <option value="Water Heater">Water Heater</option>
+
                     </select>
                 </div>
             </div>
@@ -43,7 +57,11 @@
 
                     <label for="category">Category</label>
                     <select name="category" id="category" [(ngModel)]="project.category" required>
-                        <option value="A">Category A</option>
+                        <option value="A">Quality A</option>
+                        <option value="B">Quality B</option>
+                        <option value="C">Quality C</option>
+                        <option value="D">Quality D</option>
+
                     </select>
                 </div>
                 <div class="item">
@@ -51,13 +69,21 @@
                     <label for="priority">Priority</label>
                     <select name="priority" id="priority" [(ngModel)]="project.priority" required>
                         <option value="0">High</option>
+                        <option value="1">Medium</option>
+                        <option value="2">Low</option>
+
+
                     </select>
                 </div>
                 <div class="item">
 
                     <label for="department">Department</label>
                     <select name="department" id="department" [(ngModel)]="project.department" required>
-                        <option value="strategy">Strategy</option>
+                        <option value="Strategy">Strategy</option>
+                        <option value="Finance">Finance</option>
+                        <option value="Quality">Quality</option>
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Stores">Stores</option>
                     </select>
                 </div>
             </div>
@@ -78,11 +104,19 @@
                     <label for="location">Location</label>
                     <select name="location" id="location" [(ngModel)]="project.location" required>
                         <option value="Pune">Pune</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Mumbai">Mumbai</option>
+
                     </select>
                 </div>
             </div>
+            <div class="row row4">
+                <p>status: Registered</p>
+            </div>
+            <div class="row rowbtn">
+                <button type="submit" [disabled]="!insertForm.valid">Save Project</button>
+            </div>
 
-            <button type="submit" [disabled]="!insertForm.valid">Save Project</button>
         </form>
 
     </div>

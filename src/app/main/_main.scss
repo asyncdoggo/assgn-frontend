@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+
+    .sidenav {
+        padding-top: 100px;
+        width:60px;
+        border: solid 0.3px black;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+
+        span {
+            padding: 10px;
+            &:hover{
+                cursor: pointer;
+            }
+        }
+    }
+
+    .main {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+
+        .topnav {
+            border: solid 1px black;
+            padding-left: 40px;
+            font-size: x-large;
+            margin-bottom: 20px;
+            border-radius: 0px 0px 0px 40px;
+        }
+    }
+}

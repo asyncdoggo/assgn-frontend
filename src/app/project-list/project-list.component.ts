@@ -12,10 +12,14 @@ export class ProjectListComponent {
     range = (n: Number) => [...Array(n).keys()]
     projects:any
     page = 1
-    size = 5
+    size = 10
     pages:any
+    searchitem:any
+    sortoption = "name";
+
+
     constructor(private service: ProjectsService,private router:Router){
-        service.getProjects(this.page,this.size).subscribe(value => {
+        service.getProjects(this.page,this.size, this.sortoption).subscribe(value => {
             if(value.message == "success"){
                 this.projects = value.projects
                 this.pages = value.pages
@@ -30,7 +34,7 @@ export class ProjectListComponent {
 
       changePage(p:number){
         this.page = p;
-        this.service.getProjects(this.page,this.size).subscribe(value => {
+        this.service.getProjects(this.page,this.size,this.sortoption).subscribe(value => {
             if(value.message == "success"){
                 this.projects = value.projects
                 this.pages = value.pages
@@ -38,14 +42,46 @@ export class ProjectListComponent {
         })
       }
 
-      start(id:string){
+      priority(pr:any){
+        switch (pr) {
+            case 2:
+                return "low"
+            case 1:
+                return "medium"
+            case 0:
+                return "High"            
+            default:
+                return ""
+        }
+      }
 
+      search(){
+        this.service.search(this.searchitem).subscribe((value) => {
+            if(value.message == "success"){
+                this.projects = value.projects
+            }
+        })
+      }
+
+      logout(){
+        sessionStorage.clear()
+        this.navigate("/")
+      }
+
+      start(id:string){
+        this.service.changeStatus("Running",id).subscribe((value)=>{
+            this.changePage(this.page)
+        })
       }
       cancel(id:string){
-
+        this.service.changeStatus("Cancelled",id).subscribe((value)=>{
+            this.changePage(this.page)
+        })
       }
       close(id:string){
-
+        this.service.changeStatus("Closed",id).subscribe((value)=>{
+            this.changePage(this.page)
+        })
       }
 
     
