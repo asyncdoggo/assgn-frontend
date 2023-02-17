@@ -9,6 +9,11 @@ import { InsertService } from './service/insert.service';
 })
 export class InsertProjectComponent {
 
+ sleep(ms: number) {
+    return new Promise( resolve => setTimeout(resolve, ms) );
+}
+
+
   project = {
     name:"",
     reason: "",
@@ -22,14 +27,18 @@ export class InsertProjectComponent {
     location:""
   }
 
+  error:any
+
   constructor(private service:InsertService, private router:Router){
 
   }
-
+  
   insertProject(){
-    this.service.insertProject(this.project).subscribe((value) => {
+    this.service.insertProject(this.project).subscribe( async (value) => {
       if(value.message == "success"){
-        console.log("Submit successfully")
+        this.error = "Saved successfully"
+        await this.sleep(5000)
+        this.error = ""
       }
     })
   }

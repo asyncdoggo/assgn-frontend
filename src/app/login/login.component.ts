@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 import { catchError, throwError } from 'rxjs';
 import { LoginService } from './services/login.service';
@@ -12,10 +13,26 @@ export class LoginComponent {
     visibility = "visibility_off"
     visible = false
     error_message = ""
+    loginForm: FormGroup;
+
 // email: ayushdeshpande81@gmail.com pw: ayush
-    constructor(private service: LoginService, private router: Router) { }
-    loginUser(email: String,password: string){
-        let error_message = "";
+    constructor(private service: LoginService, private router: Router, private fb: FormBuilder) { 
+        this.loginForm = this.fb.group({
+            email: ['', [Validators.required, Validators.email]],
+            password: ['', [Validators.required, Validators.minLength(8)]]
+          });
+    }
+
+
+    loginUser(){
+
+        if (this.loginForm.invalid) {
+            this.loginForm.markAllAsTouched();
+            return;
+          }
+
+        const email = this.loginForm.value.email
+        const password = this.loginForm.value.password
         this.service.loginUser(email,password)
         .pipe(
             catchError(error => {

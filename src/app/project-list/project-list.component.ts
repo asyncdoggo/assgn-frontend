@@ -23,6 +23,7 @@ export class ProjectListComponent {
             if(value.message == "success"){
                 this.projects = value.projects
                 this.pages = value.pages
+                console.log(value.pages)
             }
         })
     }

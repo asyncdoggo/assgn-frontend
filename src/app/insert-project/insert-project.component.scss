@@ -52,8 +52,13 @@
             .row4{
                 font-size: 18px;
                 font-weight: bold;
-            }
 
+                .error{
+                    font-weight: normal;
+                    padding-right:100px;
+                }
+            }
+           
             button{
                 margin-top: 20px;
                 

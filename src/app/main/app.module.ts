@@ -8,7 +8,7 @@ import { DashboardComponent } from '../dashboard/dashboard.component';
 import { ProjectListComponent } from '../project-list/project-list.component';
 import { HighchartsChartModule } from 'highcharts-angular';
 import { InsertProjectComponent } from '../insert-project/insert-project.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +23,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     HighchartsChartModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [
   ],
